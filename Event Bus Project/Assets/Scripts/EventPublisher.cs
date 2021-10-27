@@ -11,5 +11,17 @@ public class EventPublisher : MonoBehaviour
         {
             EventBus.TriggerEvent("Launch");
         }
+        if (Input.GetKeyDown("a"))
+        {
+            EventBus.TriggerEvent("Shoot Arrow");
+        }
+        if (Input.GetKeyDown("o"))
+        {
+            EventBus.TriggerEvent("Flame");
+        }
+        if (Input.GetKeyDown("d"))
+        {
+            EventBus.TriggerEvent("Drop");
+        }
     }
 }
