@@ -1,8 +1,12 @@
 using UnityEngine;
+using System.Collections;
+
 public class Cannon : MonoBehaviour
 {
     private bool m_IsQuitting;
-void OnEnable()
+    public AudioClip aclip;
+    
+    void OnEnable()
     {
         EventBus.StartListening("Shoot", Shoot);
     }
@@ -20,5 +24,9 @@ void OnEnable()
     void Shoot()
     {
         Debug.Log("Received a shoot event : shooting cannon!");
+
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.clip = aclip;
+        audio.Play();
     }
 }

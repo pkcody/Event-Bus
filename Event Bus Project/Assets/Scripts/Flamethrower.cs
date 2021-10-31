@@ -2,6 +2,7 @@ using UnityEngine;
 public class Flamethrower : MonoBehaviour
 {
     private bool m_IsQuitting;
+    public AudioClip aclip;
     void OnEnable()
     {
         EventBus.StartListening("Flame", Flame);
@@ -20,5 +21,8 @@ public class Flamethrower : MonoBehaviour
     void Flame()
     {
         Debug.Log("Received a shoot event : flaming!");
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.clip = aclip;
+        audio.Play();
     }
 }

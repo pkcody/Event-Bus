@@ -2,7 +2,8 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     private bool m_IsQuitting;
-    private bool m_IsLaunched = false;
+    public AudioClip aclip;
+
     void OnEnable()
     {
         EventBus.StartListening("Drop", Drop);
@@ -20,10 +21,9 @@ public class Ball : MonoBehaviour
     }
     void Drop()
     {
-        if (m_IsLaunched == false)
-        {
-            m_IsLaunched = true;
-            Debug.Log("Received a launch event : dropping ball!");
-        }
+        Debug.Log("Received a launch event : dropping ball!");
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.clip = aclip;
+        audio.Play();
     }
 }

@@ -5,23 +5,23 @@ public class EventPublisher : MonoBehaviour
     {
         if (Input.GetKeyDown("s"))
         {
-            EventBus.TriggerEvent("Shoot");
+            EventBus.AddEvent("Shoot");
         }
         if (Input.GetKeyDown("l"))
         {
-            EventBus.TriggerEvent("Launch");
+            EventBus.AddEvent("Launch");
         }
         if (Input.GetKeyDown("a"))
         {
-            EventBus.TriggerEvent("Shoot Arrow");
+            EventBus.AddEvent("Shoot Arrow");
         }
         if (Input.GetKeyDown("o"))
         {
-            EventBus.TriggerEvent("Flame");
+            EventBus.AddEvent("Flame");
         }
         if (Input.GetKeyDown("d"))
         {
-            EventBus.TriggerEvent("Drop");
+            EventBus.AddEvent("Drop");
         }
     }
 }

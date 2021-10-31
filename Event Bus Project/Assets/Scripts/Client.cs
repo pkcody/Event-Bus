@@ -7,7 +7,7 @@ public class Client : MonoBehaviour
         {
             GameManager.Instance.InitializeGame();
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             InventoryManager.Instance.AddItem(001);
         }

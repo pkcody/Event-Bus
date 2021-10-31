@@ -1,8 +1,10 @@
 using UnityEngine;
+using System.Collections;
+
 public class Arrow : MonoBehaviour
 {
     private bool m_IsQuitting;
-    private bool m_IsLaunched = false;
+    public AudioClip aclip;
     void OnEnable()
     {
         EventBus.StartListening("Shoot Arrow", ShootArrow);
@@ -20,10 +22,10 @@ public class Arrow : MonoBehaviour
     }
     void ShootArrow()
     {
-        if (m_IsLaunched == false)
-        {
-            m_IsLaunched = true;
-            Debug.Log("Received a launch event : shooting arrow!");
-        }
+        Debug.Log("Received a launch event : shooting arrow!");
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.clip = aclip;
+        audio.Play();
+        
     }
 }

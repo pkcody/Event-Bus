@@ -3,7 +3,8 @@ guid: 4a76bbbbf26f0e74e95399a6be76e75b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - aclip: {fileID: 8300000, guid: d023568872b00574b83ea00debf9d18c, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
